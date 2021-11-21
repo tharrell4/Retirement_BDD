@@ -8,7 +8,7 @@ Feature: Retirement Age Calculation
     Given the program is running
     When "<year>" is entered for year
     When "<month>" is entered for month
-    Then "<output>" is returned
+    Then "<output>" is calculated from "<month>" and "<year>"
 
     Examples:
       | year | month | output |
@@ -35,18 +35,18 @@ Feature: Retirement Age Calculation
       | 1959 | 11    | ('66 and 10 months', 'September of 2026') |
       | 1960 | 1     | ('67 and 0 months', 'January of 2027') |
 
-#  Scenario: Incorrect date before 1900 entered
-#    Given the program is running
-#    When "1899" is entered for year
-#    Then program will loop until error resolved
-#
-#  Scenario: Incorrect date of 2022 entered
-#    Given the program is running
-#    When "2022" is entered for year
-#    Then program will loop until error resolved
-#
-#  Scenario: Incorrect date of Month "13" entered
-#    Given the program is running
-#    When "2000" is entered for year
-#    When "13" is entered for month
-#    Then program will loop until error resolved
+  Scenario: Incorrect date before 1900 entered
+    Given the program is running
+    When "1899" is entered for year
+    Then program will loop until error resolved
+
+  Scenario: Incorrect date of 2022 entered
+    Given the program is running
+    When "2022" is entered for year
+    Then program will loop until error resolved
+
+  Scenario: Incorrect date of Month "13" entered
+    Given the program is running
+    When "2000" is entered for year
+    When "13" is entered for month
+    Then program will loop until error resolved
